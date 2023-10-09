@@ -13,24 +13,31 @@ const UserMenu = () => {
   }, []);
 
   return (
+    // user menu container posiotioned relative
     <div className="relative">
+      {/* items contatiner */}
       <div className="flex flex-row items-center gap-3 ">
+        {/* hidden on below medium devices  */}
         <div
           className="hidden md:block text-sm font-semibold py-3 px-4 rounded-full hover:bg-neutral-100 transition cursor-pointer "
           onClick={() => {}}
         >
           Airbnb your home
         </div>
+        {/* always visible with menu toggler */}
         <div
           className="p-4 md:py-1 md:px-2 border-[1px] border-neutral-200 flex flex-row items-center gap-3 rounded-full cursor-pointer hover:shadow-md transition "
           onClick={toggleOpen}
         >
+          {/* icon */}
           <AiOutlineMenu size={18} />
+          {/* Avatar image hidden on below medium device */}
           <div className="hidden md:block">
             <Avatar />
           </div>
         </div>
       </div>
+      {/* open when toggler is clicked and positioned according to the nearest relative container i.e. top container */}
       {isOpen && (
         <div className="absolute rounded-xl shadow-md w-[40vw] md:w-3/4 bg-white overflow-hidden right-0 top-12 text-sm">
           <div className="flex flex-col cursor-pointer">
